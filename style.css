@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background: white;
+    --text-color: #333;
+}
+
+.dark-mode {
+    --background: #1a1a1a;
+    --text-color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.vehicle-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.vehicle-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.gate {
+    font-size: 4em;
+    text-align: center;
+    margin: 20px 0;
+    transition: transform 0.5s;
+}
+
+.payment-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.dark-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vehicle-selector {
+        grid-template-columns: 1fr;
+    }
+    
+    .gate {
+        font-size: 3em;
+    }
+}
+
+.dark-mode .vehicle-btn:hover {
+    filter: brightness(1.2);
+}
+
+.dark-mode button[data-type="car"]:hover {
+    background-color: #af4daa;
+}
+
+.dark-mode button[data-type="bike"]:hover {
+    background-color: #2ecc71;
+}
+
+.dark-mode button[data-type="truck"]:hover {
+    background-color: #c0392b;
+}

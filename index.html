@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toll Gate Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+</head>
+<body>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+    <div class="container">
+        <h1>Smart Toll Gate System</h1>
+        
+        <!-- Vehicle Selection -->
+        <div class="vehicle-selector">
+            <button class="vehicle-btn" data-type="car" data-rate="50">🚗 Car (50₹)</button>
+            <button class="vehicle-btn" data-type="bike" data-rate="30">🏍 Bike (30₹)</button>
+            <button class="vehicle-btn" data-type="truck" data-rate="100">🚛 Truck (100₹)</button>
+        </div>
+
+        <!-- Toll Gate Animation -->
+        <div class="gate" id="entry-gate">🚧</div>
+        
+        <!-- Payment Section -->
+        <div class="payment-section" id="payment-section">
+            <h3>Payment Details</h3>
+            <p>Selected Vehicle: <span id="selected-vehicle">None</span></p>
+            <p>Amount: ₹<span id="amount">0</span></p>
+            <input type="text" id="discount-code" placeholder="Discount Code">
+            <button onclick="applyDiscount()">Apply Discount</button>
+            
+            <div class="payment-methods">
+                <label><input type="radio" name="payment" value="cash"> Cash</label>
+                <label><input type="radio" name="payment" value="card"> Card</label>
+                <label><input type="radio" name="payment" value="wallet"> Digital Wallet</label>
+            </div>
+            
+            <button onclick="processPayment()">Pay Now</button>
+        </div>
+
+        <!-- Receipt Section -->
+        <div id="receipt" style="display: none;">
+            <h3>Payment Receipt</h3>
+            <p id="receipt-details"></p>
+            <button onclick="generatePDF()">Download Receipt</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
